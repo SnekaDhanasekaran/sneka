@@ -120,3 +120,124 @@ int main()
 }
 Output
 45
+7.Find the Largest of the Two Numbers in C
+#include<stdio.h>
+
+int main ()
+{
+  int num1, num2;
+  num1=12,num2=13;
+
+  if (num1 == num2)
+    printf("both are equal");
+  else if (num1 > num2) 
+    printf("%d is greater", num1);
+  else
+    printf("%d is greater", num2);
+
+  return 0;
+}
+OUTPUT:-
+13 is greater
+8.Find the Greatest of the Three Numbers in C
+#include <stdio.h> 
+int main ()
+{
+    int num1, num2, num3;
+    
+    num1=12,num2=17,num3=19;
+
+    //checking if num1 is greatest
+    if (num1 >= num2 && num1 >= num3)
+        printf("%d is the greatest", num1);
+        
+    //checking if num2 is greatest
+    else if(num2 >= num1 && num2 >= num3)
+         printf("%d is the greatest", num2);
+
+    //checking if num2 is greatest
+    else if(num3 >= num1 && num3 >= num2)
+         printf("%d is the greatest", num3);
+    
+    return 0;
+}
+OUTPUT:-
+19 is the greatest
+9.Check if the Year is a Leap Year or Not in C
+#include <stdio.h>
+int main ()
+{
+    int year;
+    year=2000;
+    
+    if(year % 400 == 0)
+        printf("%d is a Leap Year",year);
+        
+    else if(year % 4 == 0  && year % 100 != 0)
+        printf("%d is a Leap Year",year);
+        
+    else
+        printf("%d is not a Leap Year",year);
+    
+    return 0;
+}
+Output:-
+2000 is a Leap Year
+10.C Program to Check Whether a Number is Prime Number or Not
+#include <stdio.h>  
+
+int main()
+{
+    int i, count = 0;
+    int num = 19;
+    
+    // checking number of divisors b/w 1 & num
+    for(i = 1; i <= num; i++) { if(num % i == 0) count += 1; } // 0 & 1 are not prime number if(num == 0 || num == 1) printf("%d is not prime", num); //if number of divisors are > 2 then not prime else prime 
+    else if(count > 2) 
+        printf("%d is not prime", num);
+    else
+    printf("%d is prime", num);
+
+return 0;
+}
+OUTPUT:-
+19 is Prime
+11.C Program to Print Prime Numbers In A Given Range
+#include <stdio.h>
+
+int checkPrime(int num)
+{
+    
+    if(num < 2){
+        return 0;
+    }
+    else{   
+   
+        int x = num/2;
+        for(int i = 2; i < x; i++)
+        {
+            if(num % i == 0)
+            {
+                return 0;
+            }
+        }
+    }
+    
+    return 1;
+}
+
+int main()
+{
+    int a=10, b=20;
+  
+    
+    for(int i=a; i <= b; i++){
+        if(checkPrime(i))
+            printf("%d ",i);
+    }
+ 
+    return 0;
+}
+Output
+11 13 17 19
+
